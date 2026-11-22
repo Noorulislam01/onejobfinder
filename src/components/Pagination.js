@@ -1,0 +1,1 @@
+export function Pagination(page,pages,onPage){const row=document.createElement('div');row.className='pagination';if(pages<=1)return row;for(let i=1;i<=pages;i++){const button=document.createElement('button');button.className=i===page?'page-number active':'page-number';button.textContent=String(i);button.onclick=()=>onPage(i);row.append(button);}return row;}

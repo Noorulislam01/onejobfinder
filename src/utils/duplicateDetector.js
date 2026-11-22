@@ -1,0 +1,1 @@
+export function removeDuplicates(jobs){const seen=new Set();return jobs.filter(job=>{const key=job.applicationUrl||`${job.title}|${job.company}|${job.location}`;if(seen.has(key))return false;seen.add(key);return true;});}

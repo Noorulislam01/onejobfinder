@@ -1,0 +1,1 @@
+export function formatSalary(min,max){if(min==null&&max==null)return 'Not specified';const format=value=>`₹${new Intl.NumberFormat('en-IN',{maximumFractionDigits:1}).format(value)}`;return min!=null&&max!=null?`${format(min)} – ${format(max)}`:format(min??max);}

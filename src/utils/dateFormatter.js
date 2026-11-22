@@ -1,0 +1,1 @@
+export function formatDate(value){if(!value)return 'Date not specified';const date=new Date(value);return Number.isNaN(date.getTime())?'Date not specified':new Intl.RelativeTimeFormat('en',{numeric:'auto'}).format(Math.round((date-Date.now())/86400000),'day');}

@@ -1,0 +1,3 @@
+export const categories = [
+  ['Full Stack Developer','Layers','1.2k'],['Frontend Developer','PanelsTopLeft','980'],['Backend Developer','Server','864'],['Python Developer','Braces','720'],['Django Developer','Leaf','420'],['Node.js Developer','Hexagon','610'],['React Developer','Atom','890'],['Java Developer','Coffee','540'],['Data Scientist','ChartNoAxesCombined','470'],['Machine Learning Engineer','BrainCircuit','390'],['DevOps Engineer','Workflow','580'],['Cybersecurity Engineer','ShieldCheck','310'],['Android Developer','Smartphone','460'],['Software Engineer','Code2','1.5k']
+].map(([name,icon,count])=>({name,icon,count}));

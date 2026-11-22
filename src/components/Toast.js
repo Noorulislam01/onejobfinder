@@ -1,0 +1,1 @@
+export function toast(message){let node=document.querySelector('.toast');if(!node){node=document.createElement('div');node.className='toast';document.body.append(node);}node.textContent=message;node.classList.add('show');clearTimeout(node.timer);node.timer=setTimeout(()=>node.classList.remove('show'),2200);}

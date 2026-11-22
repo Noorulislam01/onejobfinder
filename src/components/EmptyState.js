@@ -1,0 +1,1 @@
+export function EmptyState(title,message){const box=document.createElement('div');box.className='empty-state';const icon=document.createElement('div');icon.className='empty-icon';icon.textContent='⌕';const heading=document.createElement('h3');heading.textContent=title;const text=document.createElement('p');text.textContent=message;box.append(icon,heading,text);return box;}
