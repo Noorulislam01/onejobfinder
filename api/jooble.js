@@ -12,7 +12,7 @@ function parseBody(body) {
 
 export default async function handler(req, res, env = process.env) {
   const apiKey = env.JOOBLE_API_KEY;
-  const apiHost = env.JOOBLE_API_HOST || '';
+  const apiHost = env.JOOBLE_API_HOST || 'in.jooble.org';
   const configured = Boolean(apiKey && apiHost === 'in.jooble.org');
 
   if (req.method === 'GET') return sendJson(res, 200, {

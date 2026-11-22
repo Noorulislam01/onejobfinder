@@ -47,7 +47,7 @@ The app shows India-based technology listings from Remote OK and, when configure
 
 Indeed and LinkedIn are available as direct search links under the search box: the entered keywords open on the provider's own site. Their job listings are not mixed into the portal feed. Indeed's search integration is a partner Publisher JavaScript Plugin and access is provisioned by Indeed; LinkedIn's documented Jobs API is for creating and managing postings, not searching their public listings. Adding either as an in-app feed requires written/provider-approved access and credentials. Those credentials must be kept in a secure server-side integration, not frontend code.
 
-Jooble requests pass through `api/jooble.js`, a Vercel serverless function. It validates search input, limits page size, keeps credentials out of browser code, and returns provider results. India searches require an India-specific key and `JOOBLE_API_HOST=in.jooble.org`; the default `jooble.org` key serves the US market. Jooble's free plan allows up to 100 requests per day per country key. For local development, copy `.env.example` to `.env.local`, then set `JOOBLE_API_KEY` and `JOOBLE_API_HOST`. `.env.local` is gitignored. Never prefix the key with `VITE_`. Adzuna remains server-side only until its credentials are configured.
+Jooble requests pass through `api/jooble.js`, a Vercel serverless function. It validates search input, limits page size, keeps credentials out of browser code, and returns provider results. India searches require an India-specific key; the host defaults to `in.jooble.org` and can be set explicitly with `JOOBLE_API_HOST`. Jooble's free plan allows up to 100 requests per day per country key. For local development, copy `.env.example` to `.env.local` and set `JOOBLE_API_KEY`; `.env.local` is gitignored. Never prefix the key with `VITE_`. Adzuna remains server-side only until its credentials are configured.
 
 Type an employer name such as IBM, Infosys, TCS, Wipro, HCLTech, or Accenture in the job search box to use Jooble's company-name search mode for India. This searches Jooble's index; it does not guarantee a complete mirror of an employer's careers site. The search input offers supported employer names as suggestions.
 
@@ -76,6 +76,6 @@ Edit reusable components in `src/components/` and styles in `src/styles/`. Theme
 
 1. Push the project to a GitHub repository.
 2. Import the repository into Vercel and use the Vite preset. The build command is `npm run build` and output directory is `dist`.
-3. In Vercel Project Settings → Environment Variables, add `JOOBLE_API_KEY` and `JOOBLE_API_HOST` for each deployment environment. Use the Jooble host associated with the country-specific key. Do not use `VITE_` names. Redeploy after saving the settings.
+3. In Vercel Project Settings → Environment Variables, add `JOOBLE_API_KEY` for each deployment environment. Set `JOOBLE_API_HOST=in.jooble.org` if you want to configure the host explicitly. Do not use `VITE_` names. Redeploy after saving the settings.
 
 `vercel.json` includes an SPA fallback rewrite. The Remote OK feed requires no environment variable. No deployment has been performed from this repository.
